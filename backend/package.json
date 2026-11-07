@@ -1,0 +1,30 @@
+{
+  "name": "vintage-dress-api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "migrate": "node src/scripts/migrate.js",
+    "predev": "npm run migrate",
+    "prestart": "npm run migrate",
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "seed": "node src/scripts/seed.js",
+    "seed:catalog": "node src/scripts/seed-catalog.js",
+    "verify:uploads": "node src/scripts/verify-uploads.js",
+    "verify:auth": "node src/scripts/verify-auth.js",
+    "verify:checkout": "node src/scripts/verify-checkout.js",
+    "verify:mvp": "node src/scripts/verify-mvp.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.5.0",
+    "mysql2": "^3.11.0",
+    "sharp": "^0.35.5"
+  }
+}

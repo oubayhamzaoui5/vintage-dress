@@ -1,0 +1,22 @@
+{
+  "name": "vintage-dress",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "migrate": "npm run migrate --workspace backend",
+    "dev": "concurrently -k -n api,web \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace frontend",
+    "seed": "npm run seed --workspace backend",
+    "seed:catalog": "npm run seed:catalog --workspace backend",
+    "verify:uploads": "npm run verify:uploads --workspace backend",
+    "verify:auth": "npm run verify:auth --workspace backend",
+    "verify:checkout": "npm run verify:checkout --workspace backend",
+    "verify:mvp": "npm run verify:mvp --workspace backend",
+    "db:up": "node scripts/local-db.mjs start",
+    "db:stop": "node scripts/local-db.mjs stop",
+    "db:docker": "docker compose up -d --wait"
+  },
+  "devDependencies": { "concurrently": "^9.1.0" }
+}

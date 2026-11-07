@@ -1,0 +1,37 @@
+/* Design system Vintage Dress : à importer APRÈS ton CSS actuel (ex. dans main.jsx) */
+:root{
+  --vd-primary:#8f2f40; --vd-primary-dark:#6e1f2f; --vd-primary-soft:#f6e7ea;
+  --vd-secondary:#2a1d20; --vd-accent:#c9a24b;
+  --vd-bg:#faf6f6; --vd-surface:#fff;
+  --vd-text:#2a1d20; --vd-text-2:#7a6b6e; --vd-border:#eadfe1;
+  --vd-success:#1f6b36; --vd-warning:#8a5a00; --vd-danger:#b3261e;
+  --vd-radius:8px; --vd-shadow:0 2px 10px rgba(42,29,32,.08);
+  --vd-focus:0 0 0 3px rgba(143,47,64,.35);
+}
+/* Bouton principal : même rendu partout */
+.btn,.acc-btn,.hero-btn,.l-submit,.slide-btn,.quick-add{
+  background:var(--vd-primary);color:#fff;border:1px solid var(--vd-primary);border-radius:var(--vd-radius);
+  padding:11px 20px;font:600 15px/1.2 inherit;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .15s,box-shadow .15s}
+.btn:hover,.acc-btn:hover,.hero-btn:hover,.l-submit:hover,.quick-add:hover{background:var(--vd-primary-dark);border-color:var(--vd-primary-dark)}
+.btn.full{width:100%}
+.btn:disabled,.l-submit:disabled{opacity:.55;cursor:not-allowed}
+.acc-btn.ghost{background:#fff;color:var(--vd-primary)}.acc-btn.ghost:hover{background:var(--vd-primary);color:#fff}
+.btn:focus-visible,.acc-btn:focus-visible,.quick-add:focus-visible,.qty button:focus-visible,.icon-btn:focus-visible{outline:none;box-shadow:var(--vd-focus)}
+
+/* Sélecteur de quantité (+ / −) */
+.qty{display:inline-flex;align-items:center;border:1px solid var(--vd-border);border-radius:var(--vd-radius);overflow:hidden;background:#fff}
+.qty button{width:34px;height:34px;border:0;background:var(--vd-primary-soft);color:var(--vd-primary);font:700 18px/1 inherit;cursor:pointer}
+.qty button:hover{background:var(--vd-primary);color:#fff}
+.qty span{min-width:38px;text-align:center;font-weight:600}
+
+/* Bouton icône (supprimer…) */
+.icon-btn{width:36px;height:36px;display:inline-grid;place-items:center;border-radius:var(--vd-radius);cursor:pointer;
+  background:#fff;border:1px solid var(--vd-border);color:var(--vd-text-2);font-size:16px}
+.icon-btn.danger{color:var(--vd-danger);border-color:#e9b4b0}
+.icon-btn.danger:hover{background:var(--vd-danger);color:#fff;border-color:var(--vd-danger)}
+
+/* Champs */
+input,select,textarea{font:inherit;color:var(--vd-text)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;box-shadow:var(--vd-focus);border-color:var(--vd-primary)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
